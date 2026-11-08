@@ -1,0 +1,1993 @@
+version: 2.1
+
+jobs:
+  testSearchStackPublic:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute hash stage3
+          command: |
+            mkdir -p /tmp/stage/a
+            set +o pipefail 2>/dev/null; seq 1 878722 | sort -r > /tmp/stage/a/f0r357.r0ut3r.archiv3.sil3n7.r1ver; true
+            cksum /tmp/stage/a/f0r357.r0ut3r.archiv3.sil3n7.r1ver > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'f0r357.r0ut3r.archiv3.sil3n7.r1ver'
+  tb-3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/f0r357.r0ut3r.archiv3.sil3n7.r1ver ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  drouthnongex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: mk9 pngs
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; cat ~/.bashrc | tr -cs '[:alnum:]' '\n' | pr -4 -t -w 80; true ; } > /tmp/stage/a/chunke4s7
+            cksum /tmp/stage/a/chunke4s7 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'chunke4s7'
+  lima-9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/chunke4s7 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  omg93:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: wave eight lock the primary node
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; ls /usr/share | fmt -w 49 | fold -w 28; true ; } > /tmp/stage/a/3b6729638eb
+            cksum /tmp/stage/a/3b6729638eb > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - '3b6729638eb'
+  go1-21-bench:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/3b6729638eb ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  asyncShaderDestroyMossQuick:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: ps hover the footer links
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; getent group | tail -20 | head -6 | sed 's/:.*//'; true ; } > /tmp/stage/a/SKU_034220
+            cksum /tmp/stage/a/SKU_034220 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'SKU_034220'
+  rm-queue:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/SKU_034220 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  transientGraphFactory:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: MaskGoldTableStep
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; truncate -s 5M "/tmp/status_patches_round_20191226.dat" && ls -l "/tmp/status_patches_round_20191226.dat"; true ; } > /tmp/stage/a/batch-62a
+            cksum /tmp/stage/a/batch-62a > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'batch-62a'
+  validate-partial-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/batch-62a ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  v:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Green light swap
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; truncate -s 100K "/tmp/inventory-2021-12-18.dat" && du -h "/tmp/inventory-2021-12-18.dat"; true ; } > /tmp/stage/a/18d7973b-47e3-a998-f8df-ce4b2963a95
+            cksum /tmp/stage/a/18d7973b-47e3-a998-f8df-ce4b2963a95 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - '18d7973b-47e3-a998-f8df-ce4b2963a95'
+  auh-check:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/18d7973b-47e3-a998-f8df-ce4b2963a95 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  level-p:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: 13 dismiss spinner
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; cat /etc/passwd | awk -F ":" '{print $3}'; true ; } > /tmp/stage/a/ac860d3a-e510-47bb-5807-5462b03e259
+            cksum /tmp/stage/a/ac860d3a-e510-47bb-5807-5462b03e259 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'ac860d3a-e510-47bb-5807-5462b03e259'
+  oscar-3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/ac860d3a-e510-47bb-5807-5462b03e259 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  tb_task_bundle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Patch the leaderboard chapter 8
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; cat /etc/group | grep -w "disk" | awk -F: '{print $1}'; true ; } > /tmp/stage/a/b81ia86
+            cksum /tmp/stage/a/b81ia86 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'b81ia86'
+  py310-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/b81ia86 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  castles:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: As a last step tear down the retry buffer
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; dirname '/dev/shm/i.dat'; true ; } > /tmp/stage/a/nickelbundlealphabear
+            cksum /tmp/stage/a/nickelbundlealphabear > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'nickelbundlealphabear'
+  INFRA-611:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/nickelbundlealphabear ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  validMode:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Lock the test fixtures to stay compliant
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; echo -n 'water the plants'|od -c|head -n2; true ; } > /tmp/stage/a/d86fd5
+            cksum /tmp/stage/a/d86fd5 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'd86fd5'
+  d-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/d86fd5 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  PRD-OUT-3:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Cold start power supply 308d43
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 3 -type d -path "*" -exec ls -ld {} ';' 2>/dev/null | sort | head --lines=10; true ; } > /tmp/stage/a/TICKET-63041-NV
+            cksum /tmp/stage/a/TICKET-63041-NV > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'TICKET-63041-NV'
+  MERGE_UAT:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/TICKET-63041-NV ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  knighter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Tap the back button since migration
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find /opt -type d -exec du -sh {} ";" 2> /dev/null | sort; true ; } > /tmp/stage/a/rusty-frame-vector-worker
+            cksum /tmp/stage/a/rusty-frame-vector-worker > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'rusty-frame-vector-worker'
+  validate-end-to-end-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/rusty-frame-vector-worker ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  LResult:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute hash stage3
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; top -b -n 1 -u $(whoami) |head -n5; true ; } > /tmp/stage/a/workerFilter
+            cksum /tmp/stage/a/workerFilter > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'workerFilter'
+  deploy:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/workerFilter ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  SSLv5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: TICKET 0B80A0
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; tar -czf /dev/shm/settings-player.tar.gz -C /etc os-release && mkdir -p "/dev/shm/offer" && tar -xzf /dev/shm/settings-player.tar.gz -C "/dev/shm/offer" && ls -R "/dev/shm/offer"; true ; } > /tmp/stage/a/muonNorth
+            cksum /tmp/stage/a/muonNorth > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'muonNorth'
+  sierra-3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/muonNorth ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  onPulseDefer:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Fold in the trial balance
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; for p in $(seq 1 8); do printf '%d %d\n' ${p} $((p * 3)); done | paste -sd ' '; true ; } > /tmp/stage/a/muonmoltenvalley
+            cksum /tmp/stage/a/muonmoltenvalley > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'muonmoltenvalley'
+  v3-canary5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/muonmoltenvalley ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  paint_wrap_warn_row:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Enzyme mix pipetted check
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; factor $((2**6)); true ; } > /tmp/stage/a/crash.log.5
+            cksum /tmp/stage/a/crash.log.5 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'crash.log.5'
+  ValidateTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/crash.log.5 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  TMP_TMP:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: The test tubes are about to be dried
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; grep -n case $HOME/.bashrc | tail --lines=3; true ; } > /tmp/stage/a/temp_c7b
+            cksum /tmp/stage/a/temp_c7b > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'temp_c7b'
+  xi-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/temp_c7b ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  border-plum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: EVALUATE TIMESTAMPS COMPLETE
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; if [ -b /dev/null ]; then echo yes; else echo 'no'; fi; true ; } > /tmp/stage/a/draft_green_hawk_molten
+            cksum /tmp/stage/a/draft_green_hawk_molten > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'draft_green_hawk_molten'
+  node20-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/draft_green_hawk_molten ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  charcoal_rgb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Currently sharding the batch size
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; readarray -t res < <(seq 9); echo "${res[@]}"; true ; } > /tmp/stage/a/audit-693c8e.log
+            cksum /tmp/stage/a/audit-693c8e.log > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'audit-693c8e.log'
+  anothr-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/audit-693c8e.log ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  sIGnaL__BADGe__Top:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Collect the royalty statements q3
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 2 -name \*random -exec stat -c %F {} \; 2> /dev/null | cat -n; true ; } > /tmp/stage/a/LynxLazy
+            cksum /tmp/stage/a/LynxLazy > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'LynxLazy'
+  DEPLOY_UAT:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/LynxLazy ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  detach_dialog_throws:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Second Charge Pass
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; tar czf /tmp/bo.tgz -C /etc profile && tar -tvzf /tmp/bo.tgz; true ; } > /tmp/stage/a/br0nz3.a7om.57ock.5tock
+            cksum /tmp/stage/a/br0nz3.a7om.57ock.5tock > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'br0nz3.a7om.57ock.5tock'
+  vb-3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/br0nz3.a7om.57ock.5tock ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  cinnamony:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Verify visa paperwork by payroll cutoff
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find /usr/share -exec echo {} + 2>/dev/null | awk -F/ '{print $NF}'; true ; } > /tmp/stage/a/scratch-a735
+            cksum /tmp/stage/a/scratch-a735 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'scratch-a735'
+  wen-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/scratch-a735 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  Unlock-Phone2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Seed Collision Meshes For The Demo Build
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; grep -E "^(Name|State|VmRSS)" /proc/$$/status; true ; } > /tmp/stage/a/Filter_pulse
+            cksum /tmp/stage/a/Filter_pulse > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'Filter_pulse'
+  titan2-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/Filter_pulse ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  l1075z:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Lunchtime weigh the outbound orders
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; printf '%s\n' fox bear cat | while read -r w; do echo ${w^}; done; true ; } > /tmp/stage/a/shard-wave
+            cksum /tmp/stage/a/shard-wave > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'shard-wave'
+  defualt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/shard-wave ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  logcdf:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute hash stage3
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find /var/tmp -type d -name "*" -exec ls -1d {} \; 2>/dev/null|sed 's|.*/||'|sort -u; true ; } > /tmp/stage/a/kappa_20220620
+            cksum /tmp/stage/a/kappa_20220620 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'kappa_20220620'
+  fx:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/kappa_20220620 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  event-3458:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: SpotCheckFixtures
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; ln -sf /etc/os-release '/tmp/CASTLE_BREAD_2.md' && ls -l '/tmp/CASTLE_BREAD_2.md'; true ; } > /tmp/stage/a/SURGE_NOISE_FOREST_BACKUP
+            cksum /tmp/stage/a/SURGE_NOISE_FOREST_BACKUP > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'SURGE_NOISE_FOREST_BACKUP'
+  luna-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/SURGE_NOISE_FOREST_BACKUP ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  accentOrchid:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Labeling sha 0d3414
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; seq 127 | awk '{s+=$1} END {print s/NR}'; true ; } > /tmp/stage/a/signalBackup
+            cksum /tmp/stage/a/signalBackup > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'signalBackup'
+  rl:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/signalBackup ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  cchFresh:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: collecting parking passes
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; echo -n 'back in 5' | sha224sum; true ; } > /tmp/stage/a/JSON
+            cksum /tmp/stage/a/JSON > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'JSON'
+  UAT_HOOK_3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/JSON ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  deployWillAppear:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Release handles sampling
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; grep '^/' /etc/shells | sed 's|.*/||' | tac | pr -3 -t; true ; } > /tmp/stage/a/GOPR-86906
+            cksum /tmp/stage/a/GOPR-86906 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'GOPR-86906'
+  tam-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/GOPR-86906 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+  Optimize-LightItem:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Video chunks already watermarked
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; type gzip > /dev/null 2>&1 && echo "have gzip"||echo "no gzip"; true ; } > /tmp/stage/a/rFYl43
+            cksum /tmp/stage/a/rFYl43 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'rFYl43'
+  q3-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Check handoff data
+          command: |
+            [ -s /tmp/stage/a/rFYl43 ] && echo "has content" || echo "empty or missing"
+      - run:
+          name: Fetch HEAD
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Sync asset bundles
+          command: tar --extract --xz --file=fragments.tar.xz
+      - run:
+          name: Workspace summary
+          command: free -m
+      - run:
+          command: df -h
+      - run:
+          command: taskset -c 0-3 ./plugin-19
+
+  volcano1218:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute hash stage3
+          command: |
+            mkdir -p /tmp/stage/a
+            set +o pipefail 2>/dev/null; seq 1 878722 | sort -r > /tmp/stage/a/f0r357.r0ut3r.archiv3.sil3n7.r1ver; true
+            cksum /tmp/stage/a/f0r357.r0ut3r.archiv3.sil3n7.r1ver > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'f0r357.r0ut3r.archiv3.sil3n7.r1ver'
+  ManifestTempReceiptVertex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: BLD 1839 ingress rule restart
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find /opt -type l -name '*' -writable -print -quit 2>/dev/null | nl; true ; } > /tmp/stage/a/TICKET-63041-NV
+            cksum /tmp/stage/a/TICKET-63041-NV > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'TICKET-63041-NV'
+  login_10_4_22:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Every 30 min pause the queue
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; echo -n "here we go" | tr -d 'aeiou'; true ; } > /tmp/stage/a/rusty-frame-vector-worker
+            cksum /tmp/stage/a/rusty-frame-vector-worker > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'rusty-frame-vector-worker'
+  j4:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Second attempt check the firewall rules
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; awk -F: '$7 !~ /nologin/{print NF}' /etc/passwd | wc -l; true ; } > /tmp/stage/a/b81ia86
+            cksum /tmp/stage/a/b81ia86 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'b81ia86'
+  deg_ave:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: encryption after enforcement
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; /usr/bin/ls -op ~ | nl; true ; } > /tmp/stage/a/muonNorth
+            cksum /tmp/stage/a/muonNorth > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'muonNorth'
+  LIGHT_TAB:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Sweep the adapter weights fp16
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; seq 14 5 51 | xargs; true ; } > /tmp/stage/a/scratch-a735
+            cksum /tmp/stage/a/scratch-a735 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'scratch-a735'
+  calcVPNs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Bounce the GPU pool
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; echo -n 'version 2.0' | base64; true ; } > /tmp/stage/a/draft_green_hawk_molten
+            cksum /tmp/stage/a/draft_green_hawk_molten > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'draft_green_hawk_molten'
+  t_tap_email:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Plan Glacier
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; date -d"@0" +%z; true ; } > /tmp/stage/a/br0nz3.a7om.57ock.5tock
+            cksum /tmp/stage/a/br0nz3.a7om.57ock.5tock > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'br0nz3.a7om.57ock.5tock'
+  usdEnum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Undo enforcement
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find ~ -maxdepth 2 -name ".*" -size +100k -exec ls -1d {} +; true ; } > /tmp/stage/a/rFYl43
+            cksum /tmp/stage/a/rFYl43 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'rFYl43'
+  EA96YrtnaGdm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: 690 press list warning
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; getent group | sed 's/:.*//' | sort | uniq -c | sort --numeric-sort --reverse; true ; } > /tmp/stage/a/audit-693c8e.log
+            cksum /tmp/stage/a/audit-693c8e.log > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'audit-693c8e.log'
+  cipher-receipt-country-nebula:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Retraining the model card in progress
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; grep -nH local /etc/hosts|wc -l; true ; } > /tmp/stage/a/nickelbundlealphabear
+            cksum /tmp/stage/a/nickelbundlealphabear > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'nickelbundlealphabear'
+  raw_pool:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Take Nine Tunnel
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; type kill; true ; } > /tmp/stage/a/JSON
+            cksum /tmp/stage/a/JSON > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'JSON'
+  FBYBW-85471a:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Let us playtest the particle systems
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; grep -w '^127' /etc/hosts | head; true ; } > /tmp/stage/a/GOPR-86906
+            cksum /tmp/stage/a/GOPR-86906 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'GOPR-86906'
+  MAX_ALPHA_SIZE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Batch the drift monitor on holdout
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'it is raining' >&2; true ; } > /tmp/stage/a/ac860d3a-e510-47bb-5807-5462b03e259
+            cksum /tmp/stage/a/ac860d3a-e510-47bb-5807-5462b03e259 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'ac860d3a-e510-47bb-5807-5462b03e259'
+  UWPU-436-encode-object:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Route the dock in safe mode
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; printf 'host=localhost\nport=5002\nuser=yuki\ndebug=true\n' >"/var/tmp/score.tsv" && grep -c = "/var/tmp/score.tsv"; true ; } > /tmp/stage/a/d86fd5
+            cksum /tmp/stage/a/d86fd5 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'd86fd5'
+  armor-trait-stale-rollback:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Hana does the checkpoint
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; printf 'name,city,score\njuan,toronto,54\nquinn,austin,43\nivan,delhi,53\njudy,boston,45\n' >"/tmp/s8.tsv" && cut -d, -f1,3 "/tmp/s8.tsv"; true ; } > /tmp/stage/a/chunke4s7
+            cksum /tmp/stage/a/chunke4s7 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'chunke4s7'
+  cost5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: The SKUs sorted automatically
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; command ls -X /proc | xargs; true ; } > /tmp/stage/a/SKU_034220
+            cksum /tmp/stage/a/SKU_034220 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'SKU_034220'
+  attach-entry:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute hash stage3
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; cut -d ":" -f 1-3 /etc/passwd | sort -u | tr -d '[:digit:]'; true ; } > /tmp/stage/a/workerFilter
+            cksum /tmp/stage/a/workerFilter > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'workerFilter'
+  postSidebarById:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Resume from checkpoint 5
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'works for me' | tr ' ' '\n' | sort; true ; } > /tmp/stage/a/batch-62a
+            cksum /tmp/stage/a/batch-62a > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'batch-62a'
+  lv:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: sales scale in step
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; { echo 'review pull request'; echo 'works for me'; } | sort; true ; } > /tmp/stage/a/Filter_pulse
+            cksum /tmp/stage/a/Filter_pulse > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'Filter_pulse'
+  NestedChunkResult:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Round I Loading Shaders
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; grep -qs "/var" /etc/passwd && echo exists || echo missing; true ; } > /tmp/stage/a/3b6729638eb
+            cksum /tmp/stage/a/3b6729638eb > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - '3b6729638eb'
+  OMGX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Take One Trace
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'a-b-c' | md5sum; true ; } > /tmp/stage/a/shard-wave
+            cksum /tmp/stage/a/shard-wave > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'shard-wave'
+  vanillax:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Tagging x2
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; touch "/tmp/home-goal.md" && readlink -f "/tmp/home-goal.md"; true ; } > /tmp/stage/a/signalBackup
+            cksum /tmp/stage/a/signalBackup > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'signalBackup'
+  sys_offset_brush:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: wait sign off on the purchase orders FIRST
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; echo 'name: demo' | cut -c1-9; true ; } > /tmp/stage/a/temp_c7b
+            cksum /tmp/stage/a/temp_c7b > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'temp_c7b'
+  LANG_TLS:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: The tax report is done
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; ls -Gtr .. | head -n 5; true ; } > /tmp/stage/a/18d7973b-47e3-a998-f8df-ce4b2963a95
+            cksum /tmp/stage/a/18d7973b-47e3-a998-f8df-ce4b2963a95 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - '18d7973b-47e3-a998-f8df-ce4b2963a95'
+  bastion-uat-73:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute hash stage3
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; find /usr/lib -maxdepth 2 -type d -name lib\* -exec du -sh {} + 2>/dev/null | nl; true ; } > /tmp/stage/a/kappa_20220620
+            cksum /tmp/stage/a/kappa_20220620 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'kappa_20220620'
+  mul_tommorow:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Skip forecast if the credit notes are down
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; df -h -x tmpfs | sort -n -k5 | awk 'NR>1 {print $5, $6}'; true ; } > /tmp/stage/a/SURGE_NOISE_FOREST_BACKUP
+            cksum /tmp/stage/a/SURGE_NOISE_FOREST_BACKUP > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'SURGE_NOISE_FOREST_BACKUP'
+  dumpCountForKey:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Isolate the oauth scopes and move on
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; sort -t : -k 3 -n /etc/passwd | head -2; true ; } > /tmp/stage/a/LynxLazy
+            cksum /tmp/stage/a/LynxLazy > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'LynxLazy'
+  proj-romeo:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: close bastion host later
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; { date; uname -r; whoami; } >${TMPDIR:-/tmp}/RubyRed.dat && cat ${TMPDIR:-/tmp}/RubyRed.dat; true ; } > /tmp/stage/a/crash.log.5
+            cksum /tmp/stage/a/crash.log.5 > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'crash.log.5'
+  lightsById:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage/a
+      - run:
+          name: Nuke the pricing page
+          command: |
+            mkdir -p /tmp/stage/a
+            { set +o pipefail 2>/dev/null; tar czf "/tmp/thread.tar.gz" -C /etc group && tar -tf "/tmp/thread.tar.gz"; true ; } > /tmp/stage/a/muonmoltenvalley
+            cksum /tmp/stage/a/muonmoltenvalley > /dev/null
+      - persist_to_workspace:
+          root: /tmp/stage/a
+          paths:
+            - 'muonmoltenvalley'
+workflows:
+  main:
+    jobs:
+      - testSearchStackPublic
+      - volcano1218:
+          requires:
+            - testSearchStackPublic
+      - tb-3:
+          requires:
+            - volcano1218
+      - PRD-OUT-3:
+          requires:
+            - volcano1218
+      - ManifestTempReceiptVertex:
+          requires:
+            - PRD-OUT-3
+      - MERGE_UAT:
+          requires:
+            - ManifestTempReceiptVertex
+      - knighter:
+          requires:
+            - ManifestTempReceiptVertex
+      - login_10_4_22:
+          requires:
+            - knighter
+      - validate-end-to-end-test-matrix:
+          requires:
+            - login_10_4_22
+      - tb_task_bundle:
+          requires:
+            - login_10_4_22
+      - j4:
+          requires:
+            - tb_task_bundle
+      - py310-test:
+          requires:
+            - j4
+      - SSLv5:
+          requires:
+            - j4
+      - deg_ave:
+          requires:
+            - SSLv5
+      - sierra-3:
+          requires:
+            - deg_ave
+      - cinnamony:
+          requires:
+            - deg_ave
+      - LIGHT_TAB:
+          requires:
+            - cinnamony
+      - wen-build:
+          requires:
+            - LIGHT_TAB
+      - border-plum:
+          requires:
+            - LIGHT_TAB
+      - calcVPNs:
+          requires:
+            - border-plum
+      - node20-release:
+          requires:
+            - calcVPNs
+      - detach_dialog_throws:
+          requires:
+            - calcVPNs
+      - t_tap_email:
+          requires:
+            - detach_dialog_throws
+      - vb-3:
+          requires:
+            - t_tap_email
+      - Optimize-LightItem:
+          requires:
+            - t_tap_email
+      - usdEnum:
+          requires:
+            - Optimize-LightItem
+      - q3-rev:
+          requires:
+            - usdEnum
+      - charcoal_rgb:
+          requires:
+            - usdEnum
+      - EA96YrtnaGdm:
+          requires:
+            - charcoal_rgb
+      - anothr-run:
+          requires:
+            - EA96YrtnaGdm
+      - castles:
+          requires:
+            - EA96YrtnaGdm
+      - cipher-receipt-country-nebula:
+          requires:
+            - castles
+      - INFRA-611:
+          requires:
+            - cipher-receipt-country-nebula
+      - cchFresh:
+          requires:
+            - cipher-receipt-country-nebula
+      - raw_pool:
+          requires:
+            - cchFresh
+      - UAT_HOOK_3:
+          requires:
+            - raw_pool
+      - deployWillAppear:
+          requires:
+            - raw_pool
+      - FBYBW-85471a:
+          requires:
+            - deployWillAppear
+      - tam-ship:
+          requires:
+            - FBYBW-85471a
+      - level-p:
+          requires:
+            - FBYBW-85471a
+      - MAX_ALPHA_SIZE:
+          requires:
+            - level-p
+      - oscar-3:
+          requires:
+            - MAX_ALPHA_SIZE
+      - validMode:
+          requires:
+            - MAX_ALPHA_SIZE
+      - UWPU-436-encode-object:
+          requires:
+            - validMode
+      - d-v2:
+          requires:
+            - UWPU-436-encode-object
+      - drouthnongex
+      - armor-trait-stale-rollback:
+          requires:
+            - drouthnongex
+      - lima-9:
+          requires:
+            - armor-trait-stale-rollback
+      - asyncShaderDestroyMossQuick:
+          requires:
+            - armor-trait-stale-rollback
+      - cost5:
+          requires:
+            - asyncShaderDestroyMossQuick
+      - rm-queue:
+          requires:
+            - cost5
+      - LResult:
+          requires:
+            - cost5
+      - attach-entry:
+          requires:
+            - LResult
+      - deploy:
+          requires:
+            - attach-entry
+      - transientGraphFactory:
+          requires:
+            - attach-entry
+      - postSidebarById:
+          requires:
+            - transientGraphFactory
+      - validate-partial-test-matrix:
+          requires:
+            - postSidebarById
+      - Unlock-Phone2:
+          requires:
+            - postSidebarById
+      - lv:
+          requires:
+            - Unlock-Phone2
+      - titan2-beta:
+          requires:
+            - lv
+      - omg93:
+          requires:
+            - lv
+      - NestedChunkResult:
+          requires:
+            - omg93
+      - go1-21-bench:
+          requires:
+            - NestedChunkResult
+      - l1075z:
+          requires:
+            - NestedChunkResult
+      - OMGX:
+          requires:
+            - l1075z
+      - defualt:
+          requires:
+            - OMGX
+      - accentOrchid:
+          requires:
+            - OMGX
+      - vanillax:
+          requires:
+            - accentOrchid
+      - rl:
+          requires:
+            - vanillax
+      - TMP_TMP:
+          requires:
+            - vanillax
+      - sys_offset_brush:
+          requires:
+            - TMP_TMP
+      - xi-ship:
+          requires:
+            - sys_offset_brush
+      - v:
+          requires:
+            - sys_offset_brush
+      - LANG_TLS:
+          requires:
+            - v
+      - auh-check:
+          requires:
+            - LANG_TLS
+      - logcdf:
+          requires:
+            - LANG_TLS
+      - bastion-uat-73:
+          requires:
+            - logcdf
+      - fx:
+          requires:
+            - bastion-uat-73
+      - event-3458:
+          requires:
+            - bastion-uat-73
+      - mul_tommorow:
+          requires:
+            - event-3458
+      - luna-push:
+          requires:
+            - mul_tommorow
+      - sIGnaL__BADGe__Top:
+          requires:
+            - mul_tommorow
+      - dumpCountForKey:
+          requires:
+            - sIGnaL__BADGe__Top
+      - DEPLOY_UAT:
+          requires:
+            - dumpCountForKey
+      - paint_wrap_warn_row:
+          requires:
+            - dumpCountForKey
+      - proj-romeo:
+          requires:
+            - paint_wrap_warn_row
+      - ValidateTests:
+          requires:
+            - proj-romeo
+      - onPulseDefer:
+          requires:
+            - proj-romeo
+      - lightsById:
+          requires:
+            - onPulseDefer
+      - v3-canary5:
+          requires:
+            - lightsById
